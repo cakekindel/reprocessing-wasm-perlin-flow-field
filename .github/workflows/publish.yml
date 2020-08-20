@@ -28,4 +28,4 @@ jobs:
     - run: "git add bundleOutput --force"
     - run: "git commit -m 'ci: publish'"
     # https://stackoverflow.com/questions/36782467/set-subdirectory-as-website-root-on-github-pages
-    - run: "git subtree push --prefix bundleOutput origin hostme -f"
+    - run: "git subtree push --prefix bundleOutput origin hostme --force"
