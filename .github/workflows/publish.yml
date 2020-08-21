@@ -28,4 +28,5 @@ jobs:
     - run: "git add bundleOutput --force"
     - run: "git commit -m 'ci: publish'"
     # https://stackoverflow.com/questions/36782467/set-subdirectory-as-website-root-on-github-pages
-    - run: "git subtree push --prefix bundleOutput origin hostme"
+    # https://stackoverflow.com/questions/13756055/why-cant-i-push-this-up-to-date-git-subtree
+    - run: "git push hostme $(git subtree split --prefix=bundleOutput):master"
