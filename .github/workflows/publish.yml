@@ -21,7 +21,6 @@ jobs:
     - run: "npm run build:pub"
     - run: "git fetch --all"
     - run: "git switch hostme"
-    - run: "git pull"
     - run: |
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
         git config --global user.name "${{ github.actor }}"
@@ -29,4 +28,4 @@ jobs:
     - run: "git commit -m 'ci: publish'"
     # https://stackoverflow.com/questions/36782467/set-subdirectory-as-website-root-on-github-pages
     # https://stackoverflow.com/questions/13756055/why-cant-i-push-this-up-to-date-git-subtree
-    - run: "git push origin $(git subtree split --prefix=bundleOutput):hostme"
+    - run: "git push origin hostme --prefix bundleOutput"
