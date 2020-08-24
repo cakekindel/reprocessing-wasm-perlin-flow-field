@@ -28,4 +28,4 @@ jobs:
     - run: "git commit -m 'ci: publish'"
     # https://stackoverflow.com/questions/36782467/set-subdirectory-as-website-root-on-github-pages
     # https://stackoverflow.com/questions/13756055/why-cant-i-push-this-up-to-date-git-subtree
-    - run: "git push origin hostme --prefix bundleOutput"
+    - run: "git subtree push origin hostme --prefix bundleOutput"
